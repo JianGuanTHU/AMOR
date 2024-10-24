@@ -30,9 +30,9 @@ Next we take HotpotQA as an example to illustrate how we build the AMOR agent.
 
 ## I. Retriever Deployment
 
-1. Download `contriever-msmarco`  retriever from [HuggingFace](https://huggingface.co/facebook/contriever-msmarco).
+1. Download the contriever-msmarco model from [HuggingFace](https://huggingface.co/facebook/contriever-msmarco) to `./model/contriever-msmarco`.
 
-2. Download `data`, including [psgs_w100.tsv](https://dl.fbaipublicfiles.com/dpr/wikipedia_split/psgs_w100.tsv.gz), [wikipedia_embeddings](https://dl.fbaipublicfiles.com/contriever/embeddings/contriever-msmarco/wikipedia_embeddings.tar) (DO NOT FORGET TO DECOMPRESS THEM. REFER TO [OFFICIAL REPO](https://github.com/facebookresearch/contriever) FOR MORE DETAILS) and [entity2id.json](https://drive.google.com/file/d/1G65G_FoEZOLHqrXVDs8JsjflhqdEOJso/view?usp=sharing).
+2. Download data to `./data/retriever`, including [psgs_w100.tsv](https://dl.fbaipublicfiles.com/dpr/wikipedia_split/psgs_w100.tsv.gz), [wikipedia_embeddings](https://dl.fbaipublicfiles.com/contriever/embeddings/contriever-msmarco/wikipedia_embeddings.tar) (DO NOT FORGET TO DECOMPRESS THEM. REFER TO [OFFICIAL REPO](https://github.com/facebookresearch/contriever) FOR MORE DETAILS) and [entity2id.json](https://drive.google.com/file/d/1G65G_FoEZOLHqrXVDs8JsjflhqdEOJso/view?usp=sharing).
 
 3. Execute the following script:
 
@@ -62,7 +62,7 @@ Next we take HotpotQA as an example to illustrate how we build the AMOR agent.
    bash ./warmup.sh
    ```
 
-   The trained model will be saved under `./code/model/warmup_model`
+   The trained model will be saved under `./model/warmup_model`
 
 
 
@@ -110,7 +110,7 @@ cd ./code
 bash ./exploit.sh
 ```
 
-The trained model will be saved under `./code/model/adaptation_model`.
+The trained model will be saved under `./model/adaptation_model`.
 
 
 
@@ -125,6 +125,8 @@ python3 -u ./run.py \
 	--eval_file ../result/explore_test_adaptation.json.json \
 	--eval 1
 ```
+
+DO NOT forget to set the `ckpt_dir` field in `./code/init_args.py` to the path to the evaluated model. 
 
 
 

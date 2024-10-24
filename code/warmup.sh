@@ -9,12 +9,12 @@ GRADIENT_ACC_STEPS=$(($TOTAL_BATCH_SIZE/$NUM_GPUS/$BATCH_SIZE_PER_GPU))
 NUM_TRAIN_EPOCHS=2
 
 TRAIN_NAME=warmup_data
-MODEL_PATH=./model/Llama-2-7b-chat-hf/
-OUTPUT_PATH=./model/init_model
+MODEL_PATH=../model/llama_model/
+OUTPUT_PATH=../model/init_model
 python3 ./init.py $MODEL_PATH $OUTPUT_PATH
 cp $MODEL_PATH/tokenizer* $OUTPUT_PATH
 MODEL_PATH=$OUTPUT_PATH
-OUTPUT_DIR=./model/warmup_model
+OUTPUT_DIR=../model/warmup_model
 TRAIN_FILE=../data/warmup/${TRAIN_NAME}.json
 
 echo "Training llama model ${MODEL_SIZE} using $NUM_GPUS GPUs, $BATCH_SIZE_PER_GPU batch size per GPU, $GRADIENT_ACC_STEPS gradient accumulation steps"

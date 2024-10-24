@@ -7,7 +7,7 @@ class Arguments:
 @dataclass
 class GeneratorArguments(Arguments):
     model: str = field(default="llama")
-    ckpt_dir: str = field(default="./model/warmup_model", metadata={"help": ""})    
+    ckpt_dir: str = field(default="../model/warmup_model", metadata={"help": ""})    
     device: str = field(default="cuda:0", metadata={"help": ""})
 
     max_batch_size: int = field(default=4, metadata={"help": ""})
