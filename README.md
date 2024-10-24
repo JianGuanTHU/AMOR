@@ -122,7 +122,7 @@ Execute the following script:
 conda activate adaptation
 cd ./code
 python3 -u ./run.py \
-	--eval_file ../result/explore_test_adaptation.json.json \
+	--eval_file ../result/explore_test_adaptation.json \
 	--eval 1
 ```
 
