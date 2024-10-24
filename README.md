@@ -5,11 +5,9 @@ This repo provides the data and codes for our [NeurIPS 2024 work](https://arxiv.
 The notable success of large language models (LLMs) has sparked an upsurge in building language agents to complete various complex tasks. We present AMOR, an agent framework based on open-source LLMs, which reasons with external knowledge bases and adapts to specific domains through human supervision to the reasoning process. AMOR builds reasoning logic over a finite state machine (FSM) that solves problems through autonomous executions and transitions over disentangled modules. This allows humans to provide direct feedback to the individual modules, and thus naturally forms process supervision. Based on this reasoning and feedback framework, we develop AMOR through two-stage fine-tuning: warm-up
 and adaptation. The former fine-tunes the LLM with examples automatically constructed from various public datasets, enabling AMOR to generalize across different knowledge environments, while the latter tailors AMOR to specific domains using process feedback. Extensive experiments across multiple domains demonstrate the advantage of AMOR to strong baselines, thanks to its FSM-based reasoning and process feedback mechanism.
 
-![](./image/fsm.pdf)
+![](./image/fsm.png)
 
-![](./image/compare_amor.pdf)
-
-
+![](./image/compare_amor.png)
 
 Related papers:
 
@@ -54,7 +52,7 @@ Next we take HotpotQA as an example to illustrate how we build the AMOR agent.
 
 2. Download [warm-up data](). We have prodived preprocessed data `./data/warmup/warmup_data.json` for warm-up fine-tuning. You can use `./data/warmup/pro_data.py` to customize the process.
 
-   ![](./image/warmup_example.pdf)
+   ![](./image/warmup_example.png)
 
 3. Execute the following script:
 
@@ -100,7 +98,7 @@ python3 ./get_reward.py
 
 This script will annotate the reward automatically for `./result/explore_train.json` and save the result in `./result/explore_train_reward.json`.
 
-![](./image/example.pdf)
+![](./image/example.png)
 
 ### 3. Exploitation
 
