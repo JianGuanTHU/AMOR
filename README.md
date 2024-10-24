@@ -1,4 +1,4 @@
-# <img src="./image/logo.png" style="zoom:10%;" /> **AMOR**: A Recipe for Building **A**daptable **MO**dula**R** Knowledge Agents Through Process Feedback
+# **AMOR**: A Recipe for Building **A**daptable **MO**dula**R** Knowledge Agents Through Process Feedback
 
 This repo provides the data and codes for our [NeurIPS 2024 work](https://arxiv.org/abs/2402.01469).
 
