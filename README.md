@@ -62,7 +62,7 @@ Next we take HotpotQA as an example to illustrate how we build the AMOR agent.
    bash ./warmup.sh
    ```
 
-   The trained model will be saved under `./model/warmup_model`
+   The trained model will be saved under `./model/warmup_model`. We provide the checkpoint [here](https://huggingface.co/Jiann/AMOR-warmup).
 
 
 
@@ -110,7 +110,7 @@ cd ./code
 bash ./exploit.sh
 ```
 
-The trained model will be saved under `./model/adaptation_model`.
+The trained model will be saved under `./model/adaptation_model`. We provide the checkpoint [here](https://huggingface.co/Jiann/AMOR-adaptation).
 
 
 
