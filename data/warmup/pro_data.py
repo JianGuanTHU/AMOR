@@ -1037,7 +1037,7 @@ def sample_ours():
 
                         d["ipt"]["history_str"] = history
                         if ipt_type == 'task_decompose':
-                            ipt = get_decompose_prompt(task=d["ipt"]["task"], history=history, use_example=False)
+                            ipt = get_decompose_prompt(task=d["ipt"]["task"], history=history)
                             if opt_type == "next":
                                 opt = f"[Next] {d['opt']['query']}"
                             else:
@@ -1045,7 +1045,7 @@ def sample_ours():
                                 opt = "[Finish]"
                         elif ipt_type == "relevance_judgment":
                             docs = f'(title: {d["ipt"]["obs"]["title"]}) {d["ipt"]["obs"]["text"]}'
-                            ipt = get_relevance_prompt(task=d["ipt"]["task"], history=history, query=d["ipt"]["query"], docs=docs, use_example=False)
+                            ipt = get_relevance_prompt(task=d["ipt"]["task"], history=history, query=d["ipt"]["query"], docs=docs)
                             if opt_type == "irrelevant":
                                 opt = "[Irrelevant]"
                             elif opt_type == "relevant":
@@ -1055,7 +1055,7 @@ def sample_ours():
                             
                         elif ipt_type == "answer_extraction":
                             docs = "\n".join([f'[{k+1}] (title: {doc["title"]}) {doc["text"]}' for k, doc in enumerate(d["ipt"]["obs"])])
-                            ipt = get_solve_prompt(task=d["ipt"]["task"], history=history, query=d["ipt"]["query"], docs=docs, use_example=False)
+                            ipt = get_solve_prompt(task=d["ipt"]["task"], history=history, query=d["ipt"]["query"], docs=docs)
                             if opt_type == "answerable":
                                 opt = f"[Answerable] Answer: {d['opt']['answer']}; Relevant Passage ID: [{d['opt']['ID']}]"
                                 tgt_ctx = d["ipt"]["obs"][d['opt']['ID']-1]
@@ -1071,7 +1071,7 @@ def sample_ours():
                             docs = "\n".join([f'[{k+1}] (title: {doc["title"]}) {doc["text"]}' for k, doc in enumerate(d["ipt"]["obs"])])
 
                             history = ""
-                            ipt = get_finish_prompt(task=d["ipt"]["task"], psgs=docs, history=history, use_example=False)
+                            ipt = get_finish_prompt(task=d["ipt"]["task"], psgs=docs, history=history)
                             opt = d["opt"]["result"]
                         else:
                             raise Exception()
