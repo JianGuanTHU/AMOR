@@ -50,7 +50,7 @@ Next we take HotpotQA as an example to illustrate how we build the AMOR agent.
 
 1. Download `Llama` model from [HuggingFace](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)
 
-2. Download [warm-up data](). We have prodived preprocessed data `./data/warmup/warmup_data.json` for warm-up fine-tuning. You can use `./data/warmup/pro_data.py` to customize the process.
+2. Download [warm-up data](https://huggingface.co/datasets/Jiann/AMOR_warmup_data). We have prodived preprocessed data `./data/warmup/warmup_data.json` for warm-up fine-tuning. You can use `./data/warmup/pro_data.py` to customize the process.
 
    ![](./image/warmup_example.png)
 
